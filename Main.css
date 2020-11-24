@@ -1,9 +1,25 @@
-body {
-    background-color: powderblue;
+#windowBackground {
+    width: 1200px;
+    height: 1000px;
+    background-color: rgb(97, 210, 255);  
+    border-style: solid;
+    border-color: blue;
   }
-  h1 {
+
+  #headline {
+    width: 1100px;
+    height: 100px;
+    background-color: rgb(182, 244, 255);  
+    border-style: solid;
+    border-color: blue;
+    margin-top: 2%;
+    margin-left: 40px;
+  }
+
+  #headText {
+    margin-right: 40px;
+    margin-top: 5px;
     color: blue;
-  }
-  p {
-    color: red;
+    font-size: 70px;
+    direction: rtl;
   }
