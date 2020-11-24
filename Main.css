@@ -1,25 +1,31 @@
 #windowBackground {
-    width: 1200px;
-    height: 1000px;
-    background-color: rgb(97, 210, 255);  
-    border-style: solid;
-    border-color: blue;
-  }
+  width: 1200px;
+  height: 1000px;
+  background-color: rgb(97, 210, 255);
+  border-style: solid;
+  border-color: blue;
+}
 
-  #headline {
-    width: 1100px;
-    height: 100px;
-    background-color: rgb(182, 244, 255);  
-    border-style: solid;
-    border-color: blue;
-    margin-top: 2%;
-    margin-left: 40px;
-  }
+#headline {
+  width: 1100px;
+  height: 100px;
+  background-color: rgb(182, 244, 255);
+  border-style: solid;
+  border-color: blue;
+  border-radius: 12px; 
+  margin-top: 2%;
+  margin-left: 40px;
+}
 
-  #headText {
-    margin-right: 40px;
-    margin-top: 5px;
-    color: blue;
-    font-size: 70px;
-    direction: rtl;
-  }
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+#headText {
+  color: blue;
+  font-size: 80px;
+  margin: 0px;
+  margin-top: 8px;
+}
