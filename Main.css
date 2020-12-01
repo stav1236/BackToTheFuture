@@ -60,7 +60,6 @@
     width: 62vw;
     height: 50vh;
     background-color: #ffffff;
-    float: left;
 }
 
 #specificDeatils {
@@ -71,7 +70,6 @@
     width: 62vw;
     height: 20vh;
     background-color: #ffffff;
-    float: left;
 }
 
 .sideButton {
@@ -92,12 +90,12 @@
     -webkit-background-clip: text;
     background-clip: text;
     filter: drop-shadow(0 1vw 1vw rgb(8, 135, 255));
-    float: left;
 }
 
 .logo {
+    display: block;
     align-self: center;
-    transform: translate(-0.5vw, 0.1vw);
+    margin-right: 0.3vw;
     width: 4vw;
 }
 
@@ -140,7 +138,7 @@
     font-size: 1.5vw;
 }
 
-#helloeName {
+#wellcomeMessage {
     align-self: center;
     font-size: 1.5vw;
     vertical-align: middle;
