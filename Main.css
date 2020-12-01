@@ -10,13 +10,13 @@
     box-sizing: border-box;
 }
 
-.container {
+.upperContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.container2 {
+.lowerContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -43,9 +43,12 @@
     border-style: solid;
     border-color: blue;
     border-radius: 1vw;
+    justify-content: center;
 }
 
 #buttonsWindow {
+    display: flex;
+    flex-direction: column;
     margin: 0.5%;
     border-style: solid;
     border-color: rgba(116, 156, 203);
@@ -53,6 +56,7 @@
     width: 24.5%;
     height: 80vh;
     background-color: rgba(147, 205, 221);
+    justify-content: center;
 }
 
 #detailsWindow {
@@ -90,7 +94,7 @@
 }
 
 .cenetered {
-    margin-top: 25%;
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
 }
@@ -99,7 +103,7 @@ button {
     align-self: center;
     text-align: center;
     margin: 2.2%;
-    width: 50%;
+    width: 10vw;
     background-image: linear-gradient(-180deg, #6ab9f0 0%, #0095ff 100%);
     box-shadow: 0 1rem 1.25rem 0 rgba(1, 20, 65, 0.5), 0 -0.25rem 1.5rem rgb(1, 196, 255) inset, 0 0.75rem 0.5rem rgba(255, 255, 255, 0.8) inset, 0 0.25rem 0.5rem 0 rgb(59, 95, 255) inset;
 }
@@ -115,7 +119,7 @@ button span {
 
 .buttonText {
     color: white;
-    font-size: 1vw;
+    font-size: 3vh;
 }
 
 .logo {
@@ -129,8 +133,6 @@ button span {
     font-weight: bold;
     color: blue;
     font-size: 4vw;
-    margin-right: 4.5vw;
-    margin-top: 0%;
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -149,4 +151,15 @@ button span {
 
 .deatilsFont {
     font-size: 1.5vw;
+}
+
+#helloeName {
+    font-size: 1.5vw;
+    margin-bottom: 0px;
+    margin-top: 1.5vh;
+}
+
+#lastConnection {
+    font-size: 0.95vw;
+    margin-top: 0px;
 }
