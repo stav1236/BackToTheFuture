@@ -16,7 +16,7 @@
 }
 
 #contentContainer {
-    margin-top: 1%;
+    margin-top: 1vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -30,11 +30,11 @@
 #buttonsWindow {
     display: flex;
     flex-direction: column;
-    margin-left: 1%;
+    margin-left: 1vw;
     border-style: solid;
     border-color: rgba(116, 156, 203);
     border-radius: 2vw;
-    width: 24.5%;
+    width: 24vw;
     height: 80vh;
     background-color: rgba(147, 205, 221);
     justify-content: center;
@@ -47,7 +47,7 @@
     border-style: solid;
     border-color: rgba(116, 156, 203);
     border-radius: 2vw;
-    width: 70.5%;
+    width: 70vw;
     height: 80vh;
     background-color: rgba(242, 242, 242);
     align-items: center;
@@ -57,8 +57,8 @@
     text-align: center;
     border-style: solid;
     border-color: rgb(116, 156, 203);
-    width: 90%;
-    height: 63%;
+    width: 62vw;
+    height: 50vh;
     background-color: #ffffff;
     float: left;
 }
@@ -67,9 +67,9 @@
     text-align: center;
     border-style: solid;
     border-color: rgb(116, 156, 203);
-    margin-top: 1%;
-    width: 90%;
-    height: 30%;
+    margin-top: 1vh;
+    width: 62vw;
+    height: 20vh;
     background-color: #ffffff;
     float: left;
 }
@@ -80,7 +80,7 @@
     cursor: pointer;
     align-self: center;
     text-align: center;
-    margin: 2.2%;
+    margin: 1vh;
     width: 10vw;
     background-image: linear-gradient(-180deg, #6ab9f0 0%, #0095ff 100%);
     box-shadow: 0 1rem 1.25rem 0 rgba(1, 20, 65, 0.5), 0 -0.25rem 1.5rem rgb(1, 196, 255) inset, 0 0.75rem 0.5rem rgba(255, 255, 255, 0.8) inset, 0 0.25rem 0.5rem 0 rgb(59, 95, 255) inset;
@@ -96,14 +96,15 @@
 }
 
 .logo {
-    transform: translate(-20%, 5%);
+    align-self: center;
+    transform: translate(-0.5vw, 0.1vw);
     width: 4vw;
 }
 
 #headline {
     direction: rtl;
     display: flex;
-    width: 96%;
+    width: 95vw;
     background-color: rgb(182, 244, 255);
     border-style: solid;
     border-color: blue;
@@ -125,13 +126,12 @@
 } */
 
 #websiteTitle {
-    transform: translate(-5%, -52%);
+    transform: translate(-1vw, -2.5vw);
     -webkit-text-stroke: 0.07vw white;
-    text-shadow: 0.6vh 0.6vh 0 rgb(113, 104, 245), 0.6vh -0.6vh 0 rgb(113, 104, 245), -0.6vh 0.6vh 0 rgb(113, 104, 245), -0.6vh -0.6vh 0 rgb(113, 104, 245);
+    text-shadow: 0.3vw 0.3vw 0 rgb(113, 104, 245), 0.3vw -0.3vw 0 rgb(113, 104, 245), -0.3vw 0.3vw 0 rgb(113, 104, 245), -0.3vw -0.3vw 0 rgb(113, 104, 245);
     font-weight: bold;
     color: blue;
     font-size: 4vw;
-    margin-top: 0;
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -148,5 +148,4 @@
 
 #lastConnection {
     font-size: 0.95vw;
-    margin-top: 0px;
 }
