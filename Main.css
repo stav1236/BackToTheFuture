@@ -10,13 +10,13 @@
     box-sizing: border-box;
 }
 
-.upperContainer {
+#pageContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.lowerContainer {
+#contentContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -30,20 +30,6 @@
 .space {
     margin-top: 1.6vh;
     margin-right: 16.5vw;
-}
-
-#headline {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-left: 1.7%;
-    margin-right: 1.7%;
-    width: 96%;
-    height: 10vh;
-    background-color: rgb(182, 244, 255);
-    border-style: solid;
-    border-color: blue;
-    border-radius: 1vw;
-    justify-content: center;
 }
 
 #buttonsWindow {
@@ -93,13 +79,8 @@
     float: left;
 }
 
-.cenetered {
-    margin-top: 10vh;
-    display: flex;
-    flex-direction: column;
-}
-
 button {
+    cursor: pointer;
     align-self: center;
     text-align: center;
     margin: 2.2%;
@@ -123,12 +104,26 @@ button span {
 }
 
 .logo {
-    transform: translate(-20%, 2%);
-    width: 4.3vw;
+    transform: translate(-20%, 5%);
+    width: 4vw;
+}
+
+#headline {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-left: 1.7%;
+    margin-right: 1.7%;
+    width: 96%;
+    background-color: rgb(182, 244, 255);
+    border-style: solid;
+    border-color: blue;
+    border-radius: 1vw;
+    align-self: center;
+    align-items: center;
 }
 
 #headText {
-    transform: translate(-30%, -25%);
+    transform: translate(-35%, -65%);
     -webkit-text-stroke: 0.6vw rgba(135, 206, 250, 0.8);
     font-weight: bold;
     color: blue;
@@ -138,12 +133,11 @@ button span {
 }
 
 #headTextBigger {
-    transform: translate(-30%, -25%);
+    transform: translate(-35%, -65%);
     -webkit-text-stroke: 0.07vw white;
     font-weight: bold;
     color: blue;
     font-size: 4vw;
-    margin-right: 4.5vw;
     margin-top: 0%;
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
@@ -154,9 +148,10 @@ button span {
 }
 
 #helloeName {
+    align-self: center;
     font-size: 1.5vw;
     margin-bottom: 0px;
-    margin-top: 1.5vh;
+    vertical-align: middle;
 }
 
 #lastConnection {
