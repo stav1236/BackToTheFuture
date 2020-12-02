@@ -136,3 +136,7 @@
 #connectionsDeatils {
     margin-left: 1vw;
 }
+
+#logosAndTitle {
+    display: flex;
+}
