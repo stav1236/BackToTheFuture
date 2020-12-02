@@ -22,9 +22,9 @@
     justify-content: center;
 }
 
-.push {
-    margin-right: auto;
-    margin-left: 2vw;
+.pushLeft {
+    /* margin-right: auto;
+    margin-left: 2vw; */
 }
 
 #buttonsWindow {
@@ -93,10 +93,11 @@
 }
 
 .logo {
+    margin-top: 0.2vh;
     display: block;
     align-self: center;
     margin-right: 0.3vw;
-    width: 4vw;
+    width: 4.4vw;
 }
 
 #headline {
@@ -109,6 +110,7 @@
     border-radius: 1vw;
     align-self: center;
     align-items: center;
+    justify-content: space-between;
 }
 
 
@@ -124,13 +126,13 @@
 } */
 
 #websiteTitle {
-    transform: translate(-1vw, -2.5vw);
     -webkit-text-stroke: 0.07vw white;
     text-shadow: 0.3vw 0.3vw 0 rgb(113, 104, 245), 0.3vw -0.3vw 0 rgb(113, 104, 245), -0.3vw 0.3vw 0 rgb(113, 104, 245), -0.3vw -0.3vw 0 rgb(113, 104, 245);
     font-weight: bold;
     color: blue;
     font-size: 4vw;
-    position: absolute;
+    justify-self: center;
+    position: relative;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -146,4 +148,8 @@
 
 #lastConnection {
     font-size: 0.95vw;
+}
+
+#connectionsDeatils {
+    margin-left: 1vw;
 }
