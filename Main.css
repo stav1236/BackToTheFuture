@@ -48,15 +48,6 @@
     align-items: center;
 }
 
-#allDetails {
-    text-align: center;
-    border-style: solid;
-    border-color: rgb(116, 156, 203);
-    width: 62vw;
-    height: 50vh;
-    background-color: #ffffff;
-}
-
 #specificDeatils {
     text-align: center;
     border-style: solid;
@@ -127,6 +118,7 @@
     text-shadow: 0.3vw 0.3vw 0 rgb(113, 104, 245), 0.3vw -0.3vw 0 rgb(113, 104, 245), -0.3vw 0.3vw 0 rgb(113, 104, 245), -0.3vw -0.3vw 0 rgb(113, 104, 245);
     font-weight: bold;
     color: blue;
+    letter-spacing: 0.5vw;
     font-size: 4vw;
     justify-self: center;
     position: relative;
@@ -149,4 +141,40 @@
 
 #connectionsDeatils {
     margin-left: 1vw;
+}
+
+.deatilsFont {
+    font-size: 1.5vw;
+}
+
+#allDetails {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    direction: rtl;
+    align-content: center;
+    text-align: center;
+    border-style: solid;
+    border-color: rgb(116, 156, 203);
+    width: 62vw;
+    height: 50vh;
+    background-color: #ffffff;
+}
+
+#allDetailsTable {
+    font-size: 1vw;
+    width: 40vw;
+    direction: rtl;
+}
+
+#fitstDetailsTableLine {
+    color: white;
+    font-size: 1.5vw;
+    background-color: rgb(43, 43, 43);
+}
+
+.defualtRowDetailsTabale {
+    color: rgb(0, 0, 0);
+    font-size: 1.5vw;
+    background-color: rgb(145, 145, 145);
 }
