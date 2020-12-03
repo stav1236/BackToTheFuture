@@ -68,8 +68,9 @@
 }
 
 .sideButton {
+    padding: 1vw;
     color: white;
-    font-size: 3vh;
+    font-size: 1.5vw;
     cursor: pointer;
     align-self: center;
     text-align: center;
