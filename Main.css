@@ -49,6 +49,11 @@
 }
 
 #specificDeatils {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    direction: rtl;
+    align-content: center;
     text-align: center;
     border-style: solid;
     border-color: rgb(116, 156, 203);
@@ -56,6 +61,14 @@
     width: 62vw;
     height: 20vh;
     background-color: #ffffff;
+}
+
+#specificDetailsTable {
+    font-size: 1.5vw;
+    width: 50vw;
+    direction: rtl;
+    align-self: center;
+    font-weight: bold;
 }
 
 #clockController {
@@ -175,7 +188,7 @@
 
 #allDetailsTable {
     font-size: 1vw;
-    width: 40vw;
+    width: 50vw;
     direction: rtl;
 }
 
@@ -189,6 +202,10 @@
     color: rgb(0, 0, 0);
     font-size: 1.5vw;
     background-color: rgb(145, 145, 145);
+}
+
+.defualtRowDetailsTabale:hover {
+    background-color: #009df8;
 }
 
 .leftCenterContiner {
