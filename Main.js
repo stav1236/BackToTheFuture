@@ -7,6 +7,7 @@ const youngData = [{ "Id": 1, "Name": "חבר פרבר", "Place": "פני חבר
 window.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById("clock").innerHTML = new Date().toLocaleTimeString();
     document.getElementById("allDetailsTable").style.display = "none";
+    document.getElementById("addButton").style.display = "none";
     loadAllDetailsTable();
 });
 
@@ -101,13 +102,15 @@ highlightRow = () => {
 
 loadAliensPage = () => {
     document.getElementById("allDetailsTable").style.display = "none";
-    document.getElementById("specificDetailsTable").style.display = "none";
+    document.getElementById("specificDetailsTable").style.disFplay = "none";
+    document.getElementById("addButton").style.display = "none";
 
 }
 
 loadYoungPage = () => {
     document.getElementById("allDetailsTable").style.display = "";
     document.getElementById("specificDetailsTable").style.display = "";
+    document.getElementById("addButton").style.display = "inline-block";
 }
 
 setClockTime = () => {
