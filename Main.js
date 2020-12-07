@@ -14,13 +14,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
 loadAllDetailsTable = () => {
     let allDetailsTable = document.getElementById("allDetailsTable");
     let tableRows = allDetailsTable.getElementsByTagName('tr');
-    let len = tableRows.length
+    let len = tableRows.length;
     for (let row = 0; row < len - 1; row++) {
         allDetailsTable.removeChild(tableRows[1]);
     }
     youngData.forEach(young => {
         let row = document.createElement('tr');
-        row.classList.add('defualtRowDetailsTabale')
+        row.classList.add('defualtRowDetailsTabale');
         let idCol = document.createElement('td');
         idCol.innerText = young.Id;
         let nameCol = document.createElement('td');
@@ -35,33 +35,33 @@ loadAllDetailsTable = () => {
         row.appendChild(phoneCol);
         allDetailsTable.appendChild(row);
     });
-    highlightRow()
+    highlightRow();
 }
 
 sortTableByID = () => {
-    youngData.sort((a, b) => a.Id - b.Id)
-    loadAllDetailsTable()
+    youngData.sort((a, b) => a.Id - b.Id);
+    loadAllDetailsTable();
 }
 
 sortDownTableByID = () => {
-    youngData.sort((a, b) => b.Id - a.Id)
-    loadAllDetailsTable()
+    youngData.sort((a, b) => b.Id - a.Id);
+    loadAllDetailsTable();
 }
 
 sortTableByName = () => {
-    youngData.sort((a, b) => a.Name.localeCompare(b.Name))
-    loadAllDetailsTable()
+    youngData.sort((a, b) => a.Name.localeCompare(b.Name));
+    loadAllDetailsTable();
 }
 
 sortDownTableByName = () => {
-    youngData.sort((a, b) => b.Name.localeCompare(a.Name))
-    loadAllDetailsTable()
+    youngData.sort((a, b) => b.Name.localeCompare(a.Name));
+    loadAllDetailsTable();
 }
 
 showSpecificDetails = (rowIndex) => {
     let specificDetailsTable = document.getElementById("specificDetailsTable");
     let tableRows = specificDetailsTable.getElementsByTagName('tr');
-    let len = tableRows.length
+    let len = tableRows.length;
     for (let row = 0; row < len; row++) {
         specificDetailsTable.removeChild(tableRows[0]);
     }
@@ -95,14 +95,14 @@ highlightRow = () => {
             }
             let rowSelected = allDetailsTable.getElementsByTagName('tr')[rowId];
             rowSelected.style.backgroundColor = "lightblue";
-            showSpecificDetails(rowId - 1)
+            showSpecificDetails(rowId - 1);
         }
     }
 }
 
 loadAliensPage = () => {
     document.getElementById("allDetailsTable").style.display = "none";
-    document.getElementById("specificDetailsTable").style.disFplay = "none";
+    document.getElementById("specificDetailsTable").style.display = "none";
     document.getElementById("addButton").style.display = "none";
 
 }
@@ -119,7 +119,7 @@ setClockTime = () => {
     }
 }
 
-startCloack = () => {
+startClock = () => {
     clockOn = !clockOn
     if (clockOn === true) {
         document.getElementById("clockController").innerHTML = "הפסק";
@@ -130,4 +130,4 @@ startCloack = () => {
     }
 }
 
-let clockInterval = setInterval(setClockTime, 1000);
+const clockInterval = setInterval(setClockTime, 1000);
