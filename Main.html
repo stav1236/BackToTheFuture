@@ -34,11 +34,21 @@
                 <p class="deatilsFont">כל הפרטים:</p>
                 <table id="allDetailsTable">
                     <tr id="fitstDetailsTableLine">
-                        <th>מספר צעיר</th>
-                        <th style="display: flex;">שם צעיר
-                            <div style="margin-right: auto;">
-                                <div class="triangle-up" onclick="sortTable()"></div>
-                                <div class="triangle-down" onclick="sortDownTable()"></div>
+                        <th>
+                            <div style="display: flex;">מספר צעיר
+                                <div style="margin-right: auto;">
+                                    <div class="triangle-up" onclick="sortTableByID()"></div>
+                                    <div class="triangle-down" onclick="sortDownTableByID()"></div>
+                                </div>
+                            </div>
+                        </th>
+                        <th>
+                            <div style="display: flex;">
+                                שם צעיר
+                                <div style="margin-right: auto;">
+                                    <div class="triangle-up" onclick="sortTableByName()"></div>
+                                    <div class="triangle-down" onclick="sortDownTableByName()"></div>
+                                </div>
                             </div>
                         </th>
                         <th>מיקום מגורים</th>

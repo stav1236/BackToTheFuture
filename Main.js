@@ -7,7 +7,6 @@ const youngData = [{ "Id": 1, "Name": "חבר פרבר", "Place": "פני חבר
 window.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById("clock").innerHTML = new Date().toLocaleTimeString();
     document.getElementById("allDetailsTable").style.display = "none";
-    document.getElementById("specificDetailsTable").style.display = "none";
     loadAllDetailsTable();
 });
 
@@ -38,13 +37,23 @@ loadAllDetailsTable = () => {
     highlightRow()
 }
 
-sortTable = () => {
+sortTableByID = () => {
     youngData.sort((a, b) => a.Id - b.Id)
     loadAllDetailsTable()
 }
 
-sortDownTable = () => {
+sortDownTableByID = () => {
     youngData.sort((a, b) => b.Id - a.Id)
+    loadAllDetailsTable()
+}
+
+sortTableByName = () => {
+    youngData.sort((a, b) => a.Name.localeCompare(b.Name))
+    loadAllDetailsTable()
+}
+
+sortDownTableByName = () => {
+    youngData.sort((a, b) => b.Name.localeCompare(a.Name))
     loadAllDetailsTable()
 }
 
