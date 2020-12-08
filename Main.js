@@ -1,34 +1,55 @@
-let clockOn = false;
-const youngData = [{ "Id": 1, "Name": "חבר פרבר", "Place": "פני חבר", "Phone": "058-5648444", "SpecificDeatils": { "Hobit": "קולנוע", "Book": 'מנהרת הזמן' } },
-    { "Id": 48, "Name": "עדי שטיינר", "Place": "להבים", "Phone": "051-1234567", "SpecificDeatils": { "Hobit": "בילויים", "Book": 'חדווא"2' } },
-    { "Id": 99, "Name": "סאני סימן-טוב", "Place": "חולון", "Phone": "012-1234567", "SpecificDeatils": { "Hobit": "בילויים", "Book": 'הארי פוטר' } }
-]
+const STOP = 'הפסק'
+const START = "הפעל"
+const NAME = 'שם:'
+const HOBIT = 'תחביב:'
+const BOOK = 'ספר:'
+const TR = 'tr'
+const TD = "td"
+const NONE = 'none'
+
+
+
+let clockOn = true;
+let youngData = null
+let fileAsString = null
+
+fileToString = (file) => {
+    const rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = () => {
+        fileAsString = rawFile.responseText;
+    }
+    rawFile.send(null);
+}
+fileToString("./db.json");
+youngData = JSON.parse(fileAsString)
+
 
 window.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById("clock").innerHTML = new Date().toLocaleTimeString();
-    document.getElementById("allDetailsTable").style.display = "none";
-    document.getElementById("addButton").style.display = "none";
+    document.getElementById("allDetailsTable").style.display = NONE;
+    document.getElementById("addButton").style.display = NONE;
     loadAllDetailsTable();
 });
 
 loadAllDetailsTable = () => {
     let allDetailsTable = document.getElementById("allDetailsTable");
-    let tableRows = allDetailsTable.getElementsByTagName('tr');
+    let tableRows = allDetailsTable.getElementsByTagName(TR);
     let len = tableRows.length;
     for (let row = 0; row < len - 1; row++) {
         allDetailsTable.removeChild(tableRows[1]);
     }
     youngData.forEach(young => {
-        let row = document.createElement('tr');
+        let row = document.createElement(TR);
         row.classList.add('defualtRowDetailsTabale');
-        let idCol = document.createElement('td');
-        idCol.innerText = young.Id;
-        let nameCol = document.createElement('td');
-        nameCol.innerText = young.Name;
-        let placeCol = document.createElement('td');
-        placeCol.innerText = young.Place;
-        let phoneCol = document.createElement('td');
-        phoneCol.innerText = young.Phone;
+        let idCol = document.createElement(TD);
+        idCol.innerText = young.id;
+        let nameCol = document.createElement(TD);
+        nameCol.innerText = young.name;
+        let placeCol = document.createElement(TD);
+        placeCol.innerText = young.place;
+        let phoneCol = document.createElement(TD);
+        phoneCol.innerText = young.phone;
         row.appendChild(idCol);
         row.appendChild(nameCol);
         row.appendChild(placeCol);
@@ -39,43 +60,43 @@ loadAllDetailsTable = () => {
 }
 
 sortTableByID = () => {
-    youngData.sort((a, b) => a.Id - b.Id);
+    youngData.sort((a, b) => a.id - b.id);
     loadAllDetailsTable();
 }
 
 sortDownTableByID = () => {
-    youngData.sort((a, b) => b.Id - a.Id);
+    youngData.sort((a, b) => b.id - a.id);
     loadAllDetailsTable();
 }
 
 sortTableByName = () => {
-    youngData.sort((a, b) => a.Name.localeCompare(b.Name));
+    youngData.sort((a, b) => a.name.localeCompare(b.name));
     loadAllDetailsTable();
 }
 
 sortDownTableByName = () => {
-    youngData.sort((a, b) => b.Name.localeCompare(a.Name));
+    youngData.sort((a, b) => b.name.localeCompare(a.name));
     loadAllDetailsTable();
 }
 
 showSpecificDetails = (rowIndex) => {
     let specificDetailsTable = document.getElementById("specificDetailsTable");
-    let tableRows = specificDetailsTable.getElementsByTagName('tr');
+    let tableRows = specificDetailsTable.getElementsByTagName(TR);
     let len = tableRows.length;
     for (let row = 0; row < len; row++) {
         specificDetailsTable.removeChild(tableRows[0]);
     }
 
-    const youngName = youngData[rowIndex].Name;
-    const specificData = youngData[rowIndex].SpecificDeatils;
+    const youngName = youngData[rowIndex].name;
+    const specificData = youngData[rowIndex].specificDeatils;
 
-    let row = document.createElement('tr');
-    let nameCol = document.createElement('td');
-    nameCol.innerText = 'שם:' + youngName;
-    let hobitCol = document.createElement('td');
-    hobitCol.innerText = 'תחביב:' + specificData.Hobit;
-    let bookCol = document.createElement('td');
-    bookCol.innerText = 'ספר:' + specificData.Book;
+    let row = document.createElement(TR);
+    let nameCol = document.createElement(TD);
+    nameCol.innerText = NAME + youngName;
+    let hobitCol = document.createElement(TD);
+    hobitCol.innerText = HOBIT + specificData.hobit;
+    let bookCol = document.createElement(TD);
+    bookCol.innerText = BOOK + specificData.book;
     row.appendChild(nameCol);
     row.appendChild(hobitCol);
     row.appendChild(bookCol);
@@ -84,16 +105,16 @@ showSpecificDetails = (rowIndex) => {
 
 highlightRow = () => {
     let allDetailsTable = document.getElementById('allDetailsTable');
-    let cells = allDetailsTable.getElementsByTagName('td');
+    let cells = allDetailsTable.getElementsByTagName(TD);
     for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
         let cell = cells[cellIndex];
         cell.onclick = function() {
             let rowId = this.parentNode.rowIndex;
-            let rowsNotSelected = allDetailsTable.getElementsByTagName('tr');
+            let rowsNotSelected = allDetailsTable.getElementsByTagName(TR);
             for (let row = 0; row < rowsNotSelected.length; row++) {
                 rowsNotSelected[row].style.backgroundColor = "";
             }
-            let rowSelected = allDetailsTable.getElementsByTagName('tr')[rowId];
+            let rowSelected = allDetailsTable.getElementsByTagName(TR)[rowId];
             rowSelected.style.backgroundColor = "lightblue";
             showSpecificDetails(rowId - 1);
         }
@@ -101,9 +122,9 @@ highlightRow = () => {
 }
 
 loadAliensPage = () => {
-    document.getElementById("allDetailsTable").style.display = "none";
-    document.getElementById("specificDetailsTable").style.display = "none";
-    document.getElementById("addButton").style.display = "none";
+    document.getElementById("allDetailsTable").style.display = NONE;
+    document.getElementById("specificDetailsTable").style.display = NONE;
+    document.getElementById("addButton").style.display = NONE;
 
 }
 
@@ -114,18 +135,18 @@ loadYoungPage = () => {
 }
 
 setClockTime = () => {
-    if (clockOn === true) {
+    if (clockOn) {
         document.getElementById("clock").innerHTML = new Date().toLocaleTimeString();
     }
 }
 
 startClock = () => {
     clockOn = !clockOn
-    if (clockOn === true) {
-        document.getElementById("clockController").innerHTML = "הפסק";
+    if (clockOn) {
+        document.getElementById("clockController").innerHTML = STOP;
 
     } else {
-        document.getElementById("clockController").innerHTML = "הפעל";
+        document.getElementById("clockController").innerHTML = START;
 
     }
 }
