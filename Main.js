@@ -7,8 +7,6 @@ const TR = 'tr'
 const TD = "td"
 const NONE = 'none'
 
-
-
 let clockOn = true;
 let youngData = null
 let fileAsString = null
@@ -35,10 +33,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 loadAllDetailsTable = () => {
     let allDetailsTable = document.getElementById("allDetailsTable");
     let tableRows = allDetailsTable.getElementsByTagName(TR);
-    let len = tableRows.length;
-    for (let row = 0; row < len - 1; row++) {
-        allDetailsTable.removeChild(tableRows[1]);
-    }
+    [...tableRows].slice(1).forEach(row => {
+        allDetailsTable.removeChild(row);
+    });
+
     youngData.forEach(young => {
         let row = document.createElement(TR);
         row.classList.add('defualtRowDetailsTabale');
@@ -81,15 +79,9 @@ sortDownTableByName = () => {
 
 showSpecificDetails = (rowIndex) => {
     let specificDetailsTable = document.getElementById("specificDetailsTable");
-    let tableRows = specificDetailsTable.getElementsByTagName(TR);
-    let len = tableRows.length;
-    for (let row = 0; row < len; row++) {
-        specificDetailsTable.removeChild(tableRows[0]);
-    }
-
+    specificDetailsTable.innerHTML = "";
     const youngName = youngData[rowIndex].name;
     const specificData = youngData[rowIndex].specificDeatils;
-
     let row = document.createElement(TR);
     let nameCol = document.createElement(TD);
     nameCol.innerText = NAME + youngName;
@@ -106,19 +98,18 @@ showSpecificDetails = (rowIndex) => {
 highlightRow = () => {
     let allDetailsTable = document.getElementById('allDetailsTable');
     let cells = allDetailsTable.getElementsByTagName(TD);
-    for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
-        let cell = cells[cellIndex];
-        cell.onclick = function() {
-            let rowId = this.parentNode.rowIndex;
+    [...cells].forEach(cell => {
+        let rowId = cell.parentNode.rowIndex;
+        cell.onclick = () => {
             let rowsNotSelected = allDetailsTable.getElementsByTagName(TR);
-            for (let row = 0; row < rowsNotSelected.length; row++) {
-                rowsNotSelected[row].style.backgroundColor = "";
-            }
+            [...rowsNotSelected].forEach(row => {
+                row.style.backgroundColor = ""
+            });
             let rowSelected = allDetailsTable.getElementsByTagName(TR)[rowId];
             rowSelected.style.backgroundColor = "lightblue";
             showSpecificDetails(rowId - 1);
         }
-    }
+    });
 }
 
 loadAliensPage = () => {
