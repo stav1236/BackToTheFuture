@@ -1,11 +1,11 @@
-const STOP = 'הפסק'
+const STOP = "הפסק"
 const START = "הפעל"
-const NAME = 'שם:'
-const HOBIT = 'תחביב:'
-const BOOK = 'ספר:'
-const TR = 'tr'
+const NAME = "שם:"
+const HOBBY = "תחביב:"
+const BOOK = "ספר:"
+const TR = "tr"
 const TD = "td"
-const NONE = 'none'
+const NONE = "none"
 
 let clockOn = true;
 let youngData = null
@@ -23,7 +23,7 @@ fileToString("./db.json");
 youngData = JSON.parse(fileAsString)
 
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("clock").innerHTML = new Date().toLocaleTimeString();
     document.getElementById("allDetailsTable").style.display = NONE;
     document.getElementById("addButton").style.display = NONE;
@@ -39,7 +39,7 @@ loadAllDetailsTable = () => {
 
     youngData.forEach(young => {
         let row = document.createElement(TR);
-        row.classList.add('defualtRowDetailsTabale');
+        row.classList.add("defualtRowDetailsTabale");
         let idCol = document.createElement(TD);
         idCol.innerText = young.id;
         let nameCol = document.createElement(TD);
@@ -86,7 +86,7 @@ showSpecificDetails = (rowIndex) => {
     let nameCol = document.createElement(TD);
     nameCol.innerText = NAME + youngName;
     let hobitCol = document.createElement(TD);
-    hobitCol.innerText = HOBIT + specificData.hobit;
+    hobitCol.innerText = HOBBY + specificData.hobby;
     let bookCol = document.createElement(TD);
     bookCol.innerText = BOOK + specificData.book;
     row.appendChild(nameCol);
@@ -96,7 +96,7 @@ showSpecificDetails = (rowIndex) => {
 }
 
 highlightRow = () => {
-    let allDetailsTable = document.getElementById('allDetailsTable');
+    let allDetailsTable = document.getElementById("allDetailsTable");
     let cells = allDetailsTable.getElementsByTagName(TD);
     [...cells].forEach(cell => {
         let rowId = cell.parentNode.rowIndex;
@@ -131,7 +131,7 @@ setClockTime = () => {
     }
 }
 
-startClock = () => {
+operateClock = () => {
     clockOn = !clockOn
     if (clockOn) {
         document.getElementById("clockController").innerHTML = STOP;

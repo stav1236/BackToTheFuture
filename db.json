@@ -4,7 +4,7 @@
         "place": "פני חבר",
         "phone": "058-5648444",
         "specificDeatils": {
-            "hobit": "קולנוע",
+            "hobby": "קולנוע",
             "book": "מנהרת הזמן"
         }
     },
@@ -14,7 +14,7 @@
         "place": "להבים",
         "phone": "051-1234567",
         "specificDeatils": {
-            "hobit": "בילויים",
+            "hobby": "בילויים",
             "book": "חדווא\"2"
         }
     },
@@ -24,7 +24,7 @@
         "place": "חולון",
         "phone": "012-1234567",
         "specificDeatils": {
-            "hobit": "בילויים",
+            "hobby": "בילויים",
             "book": "הארי פוטר"
         }
     }

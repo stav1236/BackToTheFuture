@@ -1,4 +1,5 @@
 #windowBackground {
+    direction: rtl;
     width: 100vw;
     height: 100vh;
     background-color: rgb(97, 210, 255);
@@ -52,7 +53,6 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    direction: rtl;
     align-content: center;
     text-align: center;
     border-style: solid;
@@ -66,18 +66,14 @@
 #specificDetailsTable {
     font-size: 1.5vw;
     width: 50vw;
-    direction: rtl;
     align-self: center;
     font-weight: bold;
 }
 
 #clockController {
-    font-size: 2vw;
     display: block;
     font-size: 3vw;
     width: 10vw;
-    align-self: center;
-    cursor: pointer;
     padding: 0.2vw;
     background-image: linear-gradient(rgb(247, 247, 247), rgb(192, 192, 190));
 }
@@ -87,9 +83,8 @@
     text-align: center;
     font-size: 2vw;
     width: 10vw;
-    align-self: center;
-    background-image: linear-gradient(rgba(105, 253, 112, 0.8), rgba(42, 248, 93, 0.8));
-    border-color: rgb(28, 255, 104);
+    background-image: linear-gradient(rgba(203, 255, 216, 0.8), rgba(159, 255, 164, 0.7));
+    border-color: rgb(28, 255, 104, 0.5);
     border-style: solid;
 }
 
@@ -97,7 +92,6 @@
     padding: 1vw;
     color: white;
     font-size: 1.5vw;
-    cursor: pointer;
     align-self: center;
     text-align: center;
     margin: 1vh;
@@ -110,8 +104,6 @@
     transform: translateX(-22vw);
     color: white;
     font-size: 1.5vw;
-    cursor: pointer;
-    align-self: center;
     text-align: center;
     width: 5vw;
     background-image: linear-gradient(-180deg, #6ab9f0 0%, #0095ff 100%);
@@ -121,13 +113,11 @@
 .logo {
     margin-top: 0.2vh;
     display: block;
-    align-self: center;
     margin-right: 0.3vw;
     width: 4.4vw;
 }
 
 #headline {
-    direction: rtl;
     display: flex;
     width: 95vw;
     background-color: rgb(182, 244, 255);
@@ -146,8 +136,6 @@
     color: blue;
     letter-spacing: 0.5vw;
     font-size: 4vw;
-    justify-self: center;
-    position: relative;
 }
 
 .deatilsFont {
@@ -155,7 +143,6 @@
 }
 
 #wellcomeMessage {
-    align-self: center;
     font-size: 1.5vw;
     vertical-align: middle;
 }
@@ -168,16 +155,11 @@
     margin-left: 1vw;
 }
 
-.deatilsFont {
-    font-size: 1.5vw;
-}
-
 #allDetails {
     padding-top: 2vh;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    direction: rtl;
     align-content: center;
     text-align: center;
     border-style: solid;
@@ -191,7 +173,6 @@
     padding-top: 3vh;
     font-size: 1vw;
     width: 50vw;
-    direction: rtl;
 }
 
 #fitstDetailsTableLine {
@@ -210,26 +191,13 @@
     background-color: #009df8;
 }
 
-.leftCenterContiner {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 500px;
-}
-
 .triangle-up {
-    cursor: pointer;
-    width: 0;
-    height: 0;
     border-left: 0.35vw solid transparent;
     border-right: 0.35vw solid transparent;
     border-bottom: 0.7vw solid rgb(107, 117, 252);
 }
 
 .triangle-down {
-    cursor: pointer;
-    width: 0;
-    height: 0;
     margin-top: 0.2vw;
     border-left: 0.35vw solid transparent;
     border-right: 0.35vw solid transparent;
@@ -244,12 +212,17 @@ div {
     display: flex;
 }
 
+.flexContainerSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
 .centerFlexContainer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.pushRight {
-    margin-right: auto;
+.pointerCursor {
+    cursor: pointer;
 }

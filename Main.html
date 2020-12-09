@@ -15,7 +15,7 @@
             </div>
         </div>
         <div>
-            <button id="clockController" onclick="startClock()">
+            <button id="clockController" class="pointerCursor" onclick="operateClock()">
                 הפסק
             </button>
         </div>
@@ -29,28 +29,46 @@
         </div>
     </div>
     <div id="contentContainer">
+        <div id="buttonsWindow">
+            <button class="sideButton pointerCursor" onclick="loadAliensPage()">
+                חייזרים
+            </button>
+            <button class="sideButton pointerCursor" onclick="loadYoungPage()">
+                צעירים
+            </button>
+            <button class="sideButton pointerCursor" onclick="loadAliensPage()">
+                ניהול
+            </button>
+            <button class="sideButton pointerCursor" onclick="loadAliensPage()">
+                מלחמה
+            </button>
+            <button class="sideButton pointerCursor" onclick="loadAliensPage()">
+                מרחב גלקטי
+            </button>
+        </div>
         <div id="detailsWindow">
             <div id="allDetails">
                 <div class="centerFlexContainer">
                     <div class="deatilsFont">כל הפרטים:</div>
-                    <button id="addButton">+</button>
+                    <button id="addButton" class="pointerCursor">+</button>
                 </div>
                 <table id="allDetailsTable">
                     <tr id="fitstDetailsTableLine">
                         <th>
-                            <div class="flexContainer">מספר צעיר
-                                <div class="pushRight">
-                                    <div class="triangle-up" onclick="sortTableByID()"></div>
-                                    <div class="triangle-down" onclick="sortDownTableByID()"></div>
+                            <div class="flexContainerSpaceBetween">
+                                מספר צעיר
+                                <div>
+                                    <div class="triangle-up pointerCursor" onclick="sortTableByID()"></div>
+                                    <div class="triangle-down pointerCursor" onclick="sortDownTableByID()"></div>
                                 </div>
                             </div>
                         </th>
                         <th>
-                            <div class="flexContainer">
+                            <div class="flexContainerSpaceBetween">
                                 שם צעיר
-                                <div class="pushRight">
-                                    <div class="triangle-up" onclick="sortTableByName()"></div>
-                                    <div class="triangle-down" onclick="sortDownTableByName()"></div>
+                                <div>
+                                    <div class="triangle-up pointerCursor" onclick="sortTableByName()"></div>
+                                    <div class="triangle-down pointerCursor" onclick="sortDownTableByName()"></div>
                                 </div>
                             </div>
                         </th>
@@ -65,23 +83,7 @@
                 </table>
             </div>
         </div>
-        <div id="buttonsWindow">
-            <button class="sideButton" onclick="loadAliensPage()">
-                חייזרים
-            </button>
-            <button class="sideButton" onclick="loadYoungPage()">
-                צעירים
-            </button>
-            <button class="sideButton" onclick="loadAliensPage()">
-                ניהול
-            </button>
-            <button class="sideButton" onclick="loadAliensPage()">
-                מלחמה
-            </button>
-            <button class="sideButton" onclick="loadAliensPage()">
-                מרחב גלקטי
-            </button>
-        </div>
+
     </div>
 
 </html>
