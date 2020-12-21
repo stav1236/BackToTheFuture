@@ -22,31 +22,29 @@ fileToString = (file) => {
 fileToString("./db.json");
 youngData = JSON.parse(fileAsString)
 
-
 window.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("clock").innerHTML = new Date().toLocaleTimeString();
     document.getElementById("allDetailsTable").style.display = NONE;
     document.getElementById("addButton").style.display = NONE;
-    loadAllDetailsTable();
 });
 
 loadAllDetailsTable = () => {
-    let allDetailsTable = document.getElementById("allDetailsTable");
-    let tableRows = allDetailsTable.getElementsByTagName(TR);
+    const allDetailsTable = document.getElementById("allDetailsTable");
+    const tableRows = allDetailsTable.getElementsByTagName(TR);
     [...tableRows].slice(1).forEach(row => {
         allDetailsTable.removeChild(row);
     });
 
     youngData.forEach(young => {
-        let row = document.createElement(TR);
+        const row = document.createElement(TR);
         row.classList.add("defualtRowDetailsTabale");
-        let idCol = document.createElement(TD);
+        const idCol = document.createElement(TD);
         idCol.innerText = young.id;
-        let nameCol = document.createElement(TD);
+        const nameCol = document.createElement(TD);
         nameCol.innerText = young.name;
-        let placeCol = document.createElement(TD);
+        const placeCol = document.createElement(TD);
         placeCol.innerText = young.place;
-        let phoneCol = document.createElement(TD);
+        const phoneCol = document.createElement(TD);
         phoneCol.innerText = young.phone;
         row.appendChild(idCol);
         row.appendChild(nameCol);
@@ -57,37 +55,39 @@ loadAllDetailsTable = () => {
     highlightRow();
 }
 
-sortTableByID = () => {
-    youngData.sort((a, b) => a.id - b.id);
-    loadAllDetailsTable();
+sortUpToDownByID = () => {
+    sortYoungData((first, second) => first.id - second.id);
 }
 
-sortDownTableByID = () => {
-    youngData.sort((a, b) => b.id - a.id);
-    loadAllDetailsTable();
+sortDownToUpByID = () => {
+    sortYoungData((first, second) => second.id - first.id);
 }
 
-sortTableByName = () => {
-    youngData.sort((a, b) => a.name.localeCompare(b.name));
-    loadAllDetailsTable();
+sortUpToDownByName = () => {
+    sortYoungData((first, second) => first.name.localeCompare(second.name));
 }
 
-sortDownTableByName = () => {
-    youngData.sort((a, b) => b.name.localeCompare(a.name));
-    loadAllDetailsTable();
+sortDownToUpByName = () => {
+    sortYoungData((first, second) => second.name.localeCompare(first.name));
 }
+
+sortYoungData = (sortFunc) => {
+    youngData.sort(sortFunc);
+    loadAllDetailsTable()
+}
+
 
 showSpecificDetails = (rowIndex) => {
-    let specificDetailsTable = document.getElementById("specificDetailsTable");
+    const specificDetailsTable = document.getElementById("specificDetailsTable");
     specificDetailsTable.innerHTML = "";
     const youngName = youngData[rowIndex].name;
     const specificData = youngData[rowIndex].specificDeatils;
-    let row = document.createElement(TR);
-    let nameCol = document.createElement(TD);
+    const row = document.createElement(TR);
+    const nameCol = document.createElement(TD);
     nameCol.innerText = NAME + youngName;
-    let hobitCol = document.createElement(TD);
+    const hobitCol = document.createElement(TD);
     hobitCol.innerText = HOBBY + specificData.hobby;
-    let bookCol = document.createElement(TD);
+    const bookCol = document.createElement(TD);
     bookCol.innerText = BOOK + specificData.book;
     row.appendChild(nameCol);
     row.appendChild(hobitCol);
@@ -96,16 +96,16 @@ showSpecificDetails = (rowIndex) => {
 }
 
 highlightRow = () => {
-    let allDetailsTable = document.getElementById("allDetailsTable");
-    let cells = allDetailsTable.getElementsByTagName(TD);
+    const allDetailsTable = document.getElementById("allDetailsTable");
+    const cells = allDetailsTable.getElementsByTagName(TD);
     [...cells].forEach(cell => {
-        let rowId = cell.parentNode.rowIndex;
+        const rowId = cell.parentNode.rowIndex;
         cell.onclick = () => {
-            let rowsNotSelected = allDetailsTable.getElementsByTagName(TR);
+            const rowsNotSelected = allDetailsTable.getElementsByTagName(TR);
             [...rowsNotSelected].forEach(row => {
                 row.style.backgroundColor = ""
             });
-            let rowSelected = allDetailsTable.getElementsByTagName(TR)[rowId];
+            const rowSelected = allDetailsTable.getElementsByTagName(TR)[rowId];
             rowSelected.style.backgroundColor = "lightblue";
             showSpecificDetails(rowId - 1);
         }
@@ -120,6 +120,7 @@ loadAliensPage = () => {
 }
 
 loadYoungPage = () => {
+    loadAllDetailsTable();
     document.getElementById("allDetailsTable").style.display = "";
     document.getElementById("specificDetailsTable").style.display = "";
     document.getElementById("addButton").style.display = "inline-block";
@@ -135,9 +136,11 @@ operateClock = () => {
     clockOn = !clockOn
     if (clockOn) {
         document.getElementById("clockController").innerHTML = STOP;
+        clockInterval = setInterval(setClockTime, 1000);
 
     } else {
         document.getElementById("clockController").innerHTML = START;
+        clearInterval(clockInterval)
 
     }
 }
