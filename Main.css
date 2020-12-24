@@ -1,4 +1,5 @@
 #windowBackground {
+    direction: rtl;
     width: 100vw;
     height: 100vh;
     background-color: rgb(97, 210, 255);
@@ -36,7 +37,7 @@
 }
 
 #detailsWindow {
-    justify-content: center;
+    justify-content: space-around;
     display: flex;
     flex-direction: column;
     border-style: solid;
@@ -48,29 +49,48 @@
     align-items: center;
 }
 
-#allDetails {
+#specificDeatils {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
     text-align: center;
     border-style: solid;
     border-color: rgb(116, 156, 203);
     width: 62vw;
-    height: 50vh;
+    height: 25vh;
     background-color: #ffffff;
 }
 
-#specificDeatils {
+#specificDetailsTable {
+    font-size: 1.5vw;
+    width: 50vw;
+    align-self: center;
+    font-weight: bold;
+}
+
+#clockController {
+    display: block;
+    font-size: 3vw;
+    width: 10vw;
+    padding: 0.2vw;
+    background-image: linear-gradient(rgb(247, 247, 247), rgb(192, 192, 190));
+}
+
+#clock {
+    display: block;
     text-align: center;
+    font-size: 2vw;
+    width: 10vw;
+    background-image: linear-gradient(rgba(203, 255, 216, 0.8), rgba(159, 255, 164, 0.7));
+    border-color: rgb(28, 255, 104, 0.5);
     border-style: solid;
-    border-color: rgb(116, 156, 203);
-    margin-top: 1vh;
-    width: 62vw;
-    height: 20vh;
-    background-color: #ffffff;
 }
 
 .sideButton {
+    padding: 1vw;
     color: white;
-    font-size: 3vh;
-    cursor: pointer;
+    font-size: 1.5vw;
     align-self: center;
     text-align: center;
     margin: 1vh;
@@ -79,24 +99,24 @@
     box-shadow: 0 1rem 1.25rem 0 rgba(1, 20, 65, 0.5), 0 -0.25rem 1.5rem rgb(1, 196, 255) inset, 0 0.75rem 0.5rem rgba(255, 255, 255, 0.8) inset, 0 0.25rem 0.5rem 0 rgb(59, 95, 255) inset;
 }
 
-.sideButton span {
-    color: transparent;
-    background-image: linear-gradient(0deg, #11dbff 0%, #ffffff 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    filter: drop-shadow(0 1vw 1vw rgb(8, 135, 255));
+#addButton {
+    transform: translateX(-22vw);
+    color: white;
+    font-size: 1.5vw;
+    text-align: center;
+    width: 5vw;
+    background-image: linear-gradient(-180deg, #6ab9f0 0%, #0095ff 100%);
+    box-shadow: 0 1rem 1.25rem 0 rgba(1, 20, 65, 0.5), 0 -0.25rem 1.5rem rgb(1, 196, 255) inset, 0 0.75rem 0.5rem rgba(255, 255, 255, 0.8) inset, 0 0.25rem 0.5rem 0 rgb(59, 95, 255) inset;
 }
 
 .logo {
     margin-top: 0.2vh;
     display: block;
-    align-self: center;
     margin-right: 0.3vw;
     width: 4.4vw;
 }
 
 #headline {
-    direction: rtl;
     display: flex;
     width: 95vw;
     background-color: rgb(182, 244, 255);
@@ -113,10 +133,8 @@
     text-shadow: 0.3vw 0.3vw 0 rgb(113, 104, 245), 0.3vw -0.3vw 0 rgb(113, 104, 245), -0.3vw 0.3vw 0 rgb(113, 104, 245), -0.3vw -0.3vw 0 rgb(113, 104, 245);
     font-weight: bold;
     color: blue;
+    letter-spacing: 0.5vw;
     font-size: 4vw;
-    justify-self: center;
-    position: relative;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .deatilsFont {
@@ -124,7 +142,6 @@
 }
 
 #wellcomeMessage {
-    align-self: center;
     font-size: 1.5vw;
     vertical-align: middle;
 }
@@ -135,4 +152,76 @@
 
 #connectionsDeatils {
     margin-left: 1vw;
+}
+
+#allDetails {
+    padding-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    text-align: center;
+    border-style: solid;
+    border-color: rgb(116, 156, 203);
+    width: 62vw;
+    height: 50vh;
+    background-color: #ffffff;
+}
+
+#allDetailsTable {
+    padding-top: 3vh;
+    font-size: 1vw;
+    width: 50vw;
+}
+
+#fitstDetailsTableLine {
+    color: white;
+    font-size: 1.5vw;
+    background-color: rgb(43, 43, 43);
+}
+
+.defualtRowDetailsTabale {
+    color: rgb(0, 0, 0);
+    font-size: 1.5vw;
+    background-color: rgb(145, 145, 145);
+}
+
+.defualtRowDetailsTabale:hover {
+    background-color: #009df8;
+}
+
+.triangle-up {
+    border-left: 0.35vw solid transparent;
+    border-right: 0.35vw solid transparent;
+    border-bottom: 0.7vw solid rgb(107, 117, 252);
+}
+
+.triangle-down {
+    margin-top: 0.2vw;
+    border-left: 0.35vw solid transparent;
+    border-right: 0.35vw solid transparent;
+    border-top: 0.7vw solid rgb(107, 117, 252);
+}
+
+div {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flexContainer {
+    display: flex;
+}
+
+.flexContainerSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+.centerFlexContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pointerCursor {
+    cursor: pointer;
 }
