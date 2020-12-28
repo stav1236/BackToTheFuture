@@ -1,0 +1,290 @@
+#windowBackground {
+    direction: rtl;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(97, 210, 255);
+    border-style: solid;
+    border-color: blue;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#pageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+#contentContainer {
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#buttonsWindow {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vw;
+    border-style: solid;
+    border-color: rgba(116, 156, 203);
+    border-radius: 2vw;
+    width: 24vw;
+    height: 80vh;
+    background-color: rgba(147, 205, 221);
+    justify-content: center;
+}
+
+#detailsWindow {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-color: rgba(116, 156, 203);
+    border-radius: 2vw;
+    width: 70vw;
+    height: 80vh;
+    background-color: rgba(242, 242, 242);
+    align-items: center;
+}
+
+#specificDeatils {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    text-align: center;
+    border-style: solid;
+    border-color: rgb(116, 156, 203);
+    width: 62vw;
+    height: 10vh;
+    background-color: #ffffff;
+}
+
+#specificDetailsTable {
+    font-size: 1.5vw;
+    width: 50vw;
+    align-self: center;
+    font-weight: bold;
+}
+
+#clockController {
+    display: block;
+    font-size: 3vw;
+    width: 10vw;
+    padding: 0.2vw;
+    background-image: linear-gradient(rgb(247, 247, 247), rgb(192, 192, 190));
+}
+
+#clock {
+    display: block;
+    text-align: center;
+    font-size: 2vw;
+    width: 10vw;
+    background-image: linear-gradient(rgba(203, 255, 216, 0.8), rgba(159, 255, 164, 0.7));
+    border-color: rgb(28, 255, 104, 0.5);
+    border-style: solid;
+}
+
+.sideButton {
+    padding: 1vw;
+    color: white;
+    font-size: 1.5vw;
+    align-self: center;
+    text-align: center;
+    margin: 1vh;
+    width: 10vw;
+    background-image: linear-gradient(-180deg, #6ab9f0 0%, #0095ff 100%);
+    box-shadow: 0 1rem 1.25rem 0 rgba(1, 20, 65, 0.5), 0 -0.25rem 1.5rem rgb(1, 196, 255) inset, 0 0.75rem 0.5rem rgba(255, 255, 255, 0.8) inset, 0 0.25rem 0.5rem 0 rgb(59, 95, 255) inset;
+}
+
+#appendDetailsButton {
+    transform: translateX(-2vw);
+    color: white;
+    font-size: 1.5vw;
+    text-align: center;
+    width: 5vw;
+    background-image: linear-gradient(-180deg, #6ab9f0 0%, #0095ff 100%);
+    box-shadow: 0 1rem 1.25rem 0 rgba(1, 20, 65, 0.5), 0 -0.25rem 1.5rem rgb(1, 196, 255) inset, 0 0.75rem 0.5rem rgba(255, 255, 255, 0.8) inset, 0 0.25rem 0.5rem 0 rgb(59, 95, 255) inset;
+}
+
+.editTableButton {
+    font-size: 1vw;
+    text-align: center;
+    width: 6vw;
+}
+
+#deleteButton {
+    color: white;
+    background-image: linear-gradient(-180deg, #ff4800 0%, #ff0000 100%);
+}
+
+#addingYoungButton {
+    margin-right: 0.5vw;
+    background-image: linear-gradient(-180deg, #00ff0d 0%, #00ff0d 100%);
+}
+
+.logo {
+    margin-top: 0.2vh;
+    display: block;
+    margin-right: 0.3vw;
+    width: 4.4vw;
+}
+
+#headline {
+    display: flex;
+    width: 95vw;
+    background-color: rgb(182, 244, 255);
+    border-style: solid;
+    border-color: blue;
+    border-radius: 1vw;
+    align-self: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#websiteTitle {
+    -webkit-text-stroke: 0.07vw white;
+    text-shadow: 0.3vw 0.3vw 0 rgb(113, 104, 245), 0.3vw -0.3vw 0 rgb(113, 104, 245), -0.3vw 0.3vw 0 rgb(113, 104, 245), -0.3vw -0.3vw 0 rgb(113, 104, 245);
+    font-weight: bold;
+    color: blue;
+    letter-spacing: 0.5vw;
+    font-size: 4vw;
+}
+
+.deatilsFont {
+    font-size: 1.5vw;
+}
+
+#wellcomeMessage {
+    font-size: 1.5vw;
+    vertical-align: middle;
+}
+
+#lastConnection {
+    font-size: 0.95vw;
+}
+
+#connectionsDeatils {
+    margin-left: 1vw;
+}
+
+#allDetails {
+    padding-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    text-align: center;
+    border-style: solid;
+    border-color: rgb(116, 156, 203);
+    width: 62vw;
+    height: 62vh;
+    background-color: #ffffff;
+    margin-bottom: 1vh;
+}
+
+#allDetailsTable {
+    border-spacing: 0.5vh;
+    padding-top: 1vw;
+    font-size: 1vw;
+    width: 50vw;
+}
+
+#fitstDetailsTableLine {
+    color: white;
+    font-size: 1.5vw;
+    background-color: rgb(43, 43, 43);
+}
+
+.defualtRowDetailsTabale {
+    color: rgb(0, 0, 0);
+    font-size: 1.5vw;
+    background-color: rgb(145, 145, 145);
+}
+
+.defualtRowDetailsTabale:hover {
+    background-color: #009df8;
+}
+
+.triangle-up {
+    border-left: 0.35vw solid transparent;
+    border-right: 0.35vw solid transparent;
+    border-bottom: 0.7vw solid rgb(107, 117, 252);
+}
+
+.triangle-down {
+    margin-top: 0.2vw;
+    border-left: 0.35vw solid transparent;
+    border-right: 0.35vw solid transparent;
+    border-top: 0.7vw solid rgb(107, 117, 252);
+}
+
+div {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flexContainer {
+    display: flex;
+}
+
+.flexContainerSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+.centerFlexContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pointerCursor {
+    cursor: pointer;
+}
+
+#tableButton {
+    display: flex;
+    align-items: center;
+    transform: translateX(2vw);
+}
+
+#textAllDeatils {
+    transform: translateX(3vw);
+}
+
+#warningText {
+    font-size: 5vw;
+}
+
+.inputsRow {
+    margin-top: 0.5vh;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#AddingYoungPageContainer {
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input {
+    width: 10vw;
+    height: 2vw;
+    font-size: 1vw;
+}
+
+.inputNameAddingYoung {
+    font-size: 1vw;
+}
+
+#createNewYoungBtn {
+    background-image: linear-gradient(-180deg, #0077ff 0%, #0178ff 100%);
+    font-size: 1vw;
+    width: 4vw;
+    color: white;
+}

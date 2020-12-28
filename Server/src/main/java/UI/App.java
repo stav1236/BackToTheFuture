@@ -8,6 +8,8 @@ import com.google.gson.GsonBuilder;
 import spark.*;
 import com.google.gson.Gson;
 
+import static spark.Spark.staticFiles;
+
 public final class App {
     private static final HashMap<String, String> corsHeaders = new HashMap<>();
 
@@ -29,7 +31,10 @@ public final class App {
         Gson gsonIncludeJustExpose = new GsonBuilder().excludeFieldsWithoutExposeAnnotation()
                 .create();
 
+        staticFiles.location("/public");
+
         App.apply(); // Call this before mapping thy routes
+
 
         //Back To The Future
         Spark.get("/allYoung", ((request, response) -> gsonIncludeJustExpose.toJson(youngBusiness.getALlYoungs())));
@@ -47,7 +52,10 @@ public final class App {
 //
         Spark.post("/removeYoung/:id", ((request, response) -> {
             int idToDelete = Integer.parseInt(request.params(":id"));
-            return youngBusiness.removeYoungById(idToDelete);
+            String responseBody =youngBusiness.removeYoungById(idToDelete);
+            if(responseBody != "success")
+                response.status(500);
+            return responseBody;
         }));
     }
 }

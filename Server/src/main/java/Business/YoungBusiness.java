@@ -4,6 +4,7 @@ import Data.DataBase;
 import Models.SpecificDetails;
 import Models.Young;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -26,10 +27,14 @@ public class YoungBusiness {
                 .findAny()
                 .orElse(null);
         if (youngToDelete != null) {
-            DataBase.getInstance().delete(youngToDelete);
+            try {
+                DataBase.getInstance().delete(youngToDelete);
+            } catch (IOException e) {
+                return "no write to db";
+            }
             return "success";
         } else {
-            return "young dont  exist";
+            return "young dont exist";
         }
     }
     public String addYoungByObject(Young newYoung){
@@ -39,7 +44,11 @@ public class YoungBusiness {
                     .findAny()
                     .orElse(null);
             if (existedYoung == null) {
-                DataBase.getInstance().insert(newYoung);
+                try {
+                    DataBase.getInstance().insert(newYoung);
+                } catch (IOException e) {
+                    return "no write to db";
+                }
                 return "success";
             } else {
                 return "there is young with the same id";

@@ -37,22 +37,20 @@ public class DataBase {
         }
     }
 
-    public void writeDataToDB(){
+    public void writeDataToDB() throws IOException {
         Gson gsonIncludedAllFields = new Gson();
         try (FileWriter file = new FileWriter("src/main/resources/db.json")) {
             file.write(gsonIncludedAllFields.toJson(this.youngs));
             file.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
-    public void insert(Young newYoung) {
+    public void insert(Young newYoung) throws IOException {
         this.youngs.add(newYoung);
         writeDataToDB();
     }
 
-    public void delete(Young newYoung) {
+    public void delete(Young newYoung) throws IOException {
         this.youngs.remove(newYoung);
         writeDataToDB();
     }
