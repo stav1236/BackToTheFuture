@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="Main.css">
+
+<script src="Main.js"></script>
+<html id="windowBackground">
+
+<div id="pageContainer">
+    <div id="headline">
+        <div class="flexContainer">
+            <div><img class="logo" src="Tikshov.png"></div>
+            <div><img class="logo" src="Mazpenlogo.png"></div>
+            <div>
+                <div id="websiteTitle">בחזרה לעתיד</div>
+            </div>
+        </div>
+        <div>
+            <button id="clockController" class="pointerCursor" onclick="operateClock()">
+                הפסק
+            </button>
+        </div>
+        <div>
+            <div id="clock">
+            </div>
+        </div>
+        <div id="connectionsDeatils">
+            <div id="wellcomeMessage">שלום פלוני אלמוני</div>
+            <div id="lastConnection">הכניסה האחרונה שלך 11:00</div>
+        </div>
+    </div>
+    <div id="contentContainer">
+        <div id="buttonsWindow">
+            <button class="sideButton pointerCursor" onclick="loadAliensPage()">
+                חייזרים
+            </button>
+            <button class="sideButton pointerCursor" onclick="loadYoungPage()">
+                צעירים
+            </button>
+            <button class="sideButton pointerCursor" onclick="loadAliensPage()">
+                ניהול
+            </button>
+            <button class="sideButton pointerCursor" onclick="loadAliensPage()">
+                מלחמה
+            </button>
+            <button class="sideButton pointerCursor" onclick="loadAliensPage()">
+                מרחב גלקטי
+            </button>
+        </div>
+        <div id="detailsWindow">
+            <div id="AlienPageContainer">
+                <h1 id="warningText">העמוד בהליכי בנייה</h1>
+            </div>
+            <div id="YoungPageContainer">
+                <div id="allDetails">
+                    <div class="centerFlexContainer">
+                        <div id="tableButton">
+                            <button id="deleteButton" class="editTableButton" onclick="deleteYoung()">
+                        מחיקה
+                        </button>
+                            <button id="addingYoungButton" class="editTableButton" onclick="loadAddingYoungPage()">
+                        הוספה
+                        </button>
+                        </div>
+                        <div id="textAllDeatils" class="deatilsFont">כל הפרטים:</div>
+                        <button id="appendDetailsButton" class="pointerCursor">+</button>
+                    </div>
+                    <table id="allDetailsTable">
+                        <tr id="fitstDetailsTableLine">
+                            <th>
+                                <div class="flexContainerSpaceBetween">
+                                    מספר צעיר
+                                    <div>
+                                        <div class="triangle-up pointerCursor" onclick="sortUpToDownByID()"></div>
+                                        <div class="triangle-down pointerCursor" onclick="sortDownToUpByID()"></div>
+                                    </div>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="flexContainerSpaceBetween">
+                                    שם צעיר
+                                    <div>
+                                        <div class="triangle-up pointerCursor" onclick="sortUpToDownByName()"></div>
+                                        <div class="triangle-down pointerCursor" onclick="sortDownToUpByName()"></div>
+                                    </div>
+                                </div>
+                            </th>
+                            <th>מיקום מגורים</th>
+                            <th>טלפון</ths>
+                        </tr>
+                    </table>
+                    <div id="AddingYoungPageContainer">
+                        <div class="inputsRow">
+                            <div>
+                                <label class="inputNameAddingYoung">מספר צעיר</label>
+                                <input type="number" id="youngIdInput">
+                            </div>
+                            <div>
+                                <labe class="inputNameAddingYoung">שם צעיר</label>
+                                    <input type="text" id="youngNameInput">
+                            </div>
+                            <div>
+                                <label class="inputNameAddingYoung">מיקום מגורים</label>
+                                <input type="text" id="youngPlaceInput">
+                            </div>
+                        </div>
+                        <div class="inputsRow">
+                            <div class="inputNameAddingYoung">
+                                <label>מספר טלפון</label>
+                                <input type="number" id="youngPhoneInput">
+                            </div>
+                            <div class="inputNameAddingYoung">
+                                <label>תחביב</label>
+                                <input type="text" id="youngHobbyInput">
+                            </div class="inputNameAddingYoung">
+                            <div class="inputNameAddingYoung">
+                                <label>ספר אהוב</label>
+                                <input type="text" id="youngBookInput">
+                            </div>
+                        </div>
+                        <button id="createNewYoungBtn" onclick="postNewYoung()">הוסף</button>
+                    </div>
+                </div>
+                <div id="specificDeatils">
+                    <div class="deatilsFont">פרטים ספציפיים:</div>
+                    <table id="specificDetailsTable">
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</html>
