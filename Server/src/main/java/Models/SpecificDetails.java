@@ -9,7 +9,11 @@ public class SpecificDetails {
         this.favoriteBook = favoriteBook;
     }
 
-    public boolean isNotNull() {
-        return this.hobby != null && this.favoriteBook != null;
+    @Override
+    public String toString() {
+        return "SpecificDetails{" +
+                "hobby='" + hobby + '\'' +
+                ", favoriteBook='" + favoriteBook + '\'' +
+                '}';
     }
 }

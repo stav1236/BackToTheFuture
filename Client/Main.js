@@ -27,7 +27,7 @@ loadAllDetailsTable = async() => {
         allDetailsTable.removeChild(row);
     });
     if (!youngData) {
-        const response = await fetch(`${SERVER_ADDRESS}allYoung`)
+        const response = await fetch(`${SERVER_ADDRESS}youngs`)
         youngData = await response.json();
     }
 
@@ -35,7 +35,7 @@ loadAllDetailsTable = async() => {
         const row = document.createElement(TR);
         row.classList.add("defualtRowDetailsTabale");
         const idCol = document.createElement(TD);
-        idCol.innerText = young.id;
+        idCol.innerText = young._id;
         const nameCol = document.createElement(TD);
         nameCol.innerText = young.name;
         const placeCol = document.createElement(TD);
@@ -52,11 +52,11 @@ loadAllDetailsTable = async() => {
 }
 
 sortUpToDownByID = () => {
-    sortYoungData((first, second) => first.id - second.id);
+    sortYoungData((first, second) => first._id - second._id);
 }
 
 sortDownToUpByID = () => {
-    sortYoungData((first, second) => second.id - first.id);
+    sortYoungData((first, second) => second._id - first._id);
 }
 
 sortUpToDownByName = () => {
@@ -80,7 +80,7 @@ showSpecificDetails = async(rowIndex) => {
     specificDetailsTable.innerHTML = "";
     let youngDetails = null;
     chosenYoung = youngData[rowIndex];
-    const response = await fetch(`${SERVER_ADDRESS}specificYoungDetails/${youngData[rowIndex].id}`)
+    const response = await fetch(`${SERVER_ADDRESS}specificDetails/${youngData[rowIndex]._id}`)
     youngDetails = await response.json();
     const youngName = youngData[rowIndex].name;
     const row = document.createElement(TR);
@@ -175,7 +175,7 @@ operateClock = () => {
 
 deleteYoung = async() => {
     if (Boolean(chosenYoung)) {
-        await fetch(`${SERVER_ADDRESS}removeYoung/${chosenYoung.id}`, { method: "POST" });
+        await fetch(`${SERVER_ADDRESS}removeYoung/${chosenYoung._id}`, { method: "POST" });
         youngData.splice(youngData.indexOf(chosenYoung), 1);
         chosenYoung = null;
         clearSpecificDetailsTable();
@@ -193,7 +193,7 @@ creatYoungObject = () => {
     const hobby = document.getElementById(INPUTS[4]).value;
     const favBook = document.getElementById(INPUTS[5]).value;
     const newYoung = {
-        "id": youngId,
+        "_id": youngId,
         "name": youngName,
         "place": youngPlace,
         "phone": youngPhone,
@@ -217,7 +217,7 @@ clearInputs = () => {
 
 postNewYoung = async() => {
     const newYoung = creatYoungObject();
-    if (newYoung.id && newYoung.name != "" && newYoung.place != "" &&
+    if (newYoung._id && newYoung.name != "" && newYoung.place != "" &&
         newYoung.phone && newYoung.specificDetails.hobby != "" && newYoung.specificDetails.favoriteBook != "") {
         const response = await fetch(`${SERVER_ADDRESS}insertYoung`, {
             method: 'POST',
@@ -228,7 +228,8 @@ postNewYoung = async() => {
         if (response.status == 200) {
             youngData.push(newYoung);
             clearInputs();
-        } else {
+        } 
+        else {
             if (responseText == "no write to db") {
                 alert("לא הצליח לכתוב לשרת");
             } else {
